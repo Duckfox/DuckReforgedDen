@@ -11,7 +11,7 @@ CatchMessage:
 FixExplodedDen:
   #是否开启
   enable: true
-  #场外Mega后一定时间内无法点击巢穴(推荐大于等于10)
+  #场外招式后一定时间内无法点击巢穴(推荐大于等于10)
   time: 10
 #禁止巢穴被传送门传送(禁止搬运巢穴)
 AntiDenPortal:
@@ -38,11 +38,13 @@ BanItemsInDen:
 BanPokemonInDen:
   #是否开启
   enable: true
+  # 是否禁止神兽，如果开启，神兽就不会在巢穴里了
   banLegendary: false
+  #是否在禁止后返还星块
   compensatePieceAfterAnti: true
+  #在使用神兽星块后延迟多久判断，如果你遇到仍然刷新禁止的宝可梦，请适当调整此值
   WaterudeWishingPiece:
     delay: 2
-  range: 10
   #禁止刷新列表
   #填写宝可梦的名称，支持英文与中文，如果写英文请注意首字母大写，暂不支持形态
   list:
@@ -52,6 +54,7 @@ BanPokemonInDen:
 RaidBattleLimit:
   # 是否开启
   enable: false
+  # 是否保存到本地，如果不开的话，每次重启都清零
   save: true
   # 每种权限对应的次数
   # 权限节点为duckreforgedden. + key

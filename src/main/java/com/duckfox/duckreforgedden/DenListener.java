@@ -108,7 +108,7 @@ public class DenListener implements Listener {
                 if (DuckReforgedDen.getConfigManager().getBoolean("BanPokemonInDen.enable")) {
                     if (event.wasRightClick() && den.getServerData() != null) {
                         EnumSpecies species = den.getServerData().getSpecies();
-                        if (species != null && (banPokemonList.contains(species.getPokemonName()) || banPokemonList.contains(species.getLocalizedName()))) {
+                        if (species != null && ((species.isLegendary() && (DuckReforgedDen.getConfigManager().getBoolean("BanPokemonInDen.banLegendary"))) || banPokemonList.contains(species.getPokemonName()) || banPokemonList.contains(species.getLocalizedName()))) {
                             den.clearData();
                             event.setCanceled(true);
                         }
@@ -122,7 +122,7 @@ public class DenListener implements Listener {
 
                             if (den.getServerData() != null) {
                                 EnumSpecies species = den.getServerData().getSpecies();
-                                if (species != null && (banPokemonList.contains(species.getPokemonName()) || banPokemonList.contains(species.getLocalizedName()))) {
+                                if (species != null && ((species.isLegendary() && (DuckReforgedDen.getConfigManager().getBoolean("BanPokemonInDen.banLegendary"))) || banPokemonList.contains(species.getPokemonName()) || banPokemonList.contains(species.getLocalizedName()))) {
                                     den.clearData();
                                     DuckReforgedDen.getMessageManager().sendMessage(player, "BanPokemonInDen.WaterudeWishingPiece.message");
                                     if (DuckReforgedDen.getConfigManager().getBoolean("BanPokemonInDen.compensatePieceAfterAnti")) {
@@ -158,7 +158,7 @@ public class DenListener implements Listener {
             RandomizeRaidEvent.ChooseSpecies event = (RandomizeRaidEvent.ChooseSpecies) forgeEvent.getForgeEvent();
             RaidData raid = event.getRaid();
             if (raid != null && raid.getSpecies() != null) {
-                if (banPokemonList.contains(raid.getSpecies().getPokemonName()) || banPokemonList.contains(raid.getSpecies().getLocalizedName())) {
+                if ((raid.getSpecies().isLegendary() && (DuckReforgedDen.getConfigManager().getBoolean("BanPokemonInDen.banLegendary"))) || banPokemonList.contains(raid.getSpecies().getPokemonName()) || banPokemonList.contains(raid.getSpecies().getLocalizedName())) {
                     event.setCanceled(true);
                 }
             }
