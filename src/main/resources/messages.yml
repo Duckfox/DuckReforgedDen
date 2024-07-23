@@ -1,0 +1,20 @@
+reload: "插件重载成功！"
+about: "\n作者:%author%\n当前版本：%version%"
+
+catchMessage: "&b玩家 &c%player_name% &b在 &c%star% &b星巢穴中用 &c%ball% &b捕捉了一只 &c%pokemon%"
+
+FixExplodedDen:
+  warn: "亲爱的玩家，由于模组原因，您在使用此类场外进化后%time%秒内无法进行极巨团战！"
+  remega: "请不要在使用场外进化时再次使用场外进化！"
+  canStart: "您现在可以开启团战了！"
+  cantStart: "您现在还不能开启团战！"
+BanPokemonInDen:
+  WaterudeWishingPiece:
+    message: "&f但是什么也没发生！"
+RaidBattleLimit:
+  Reached: "您已经达到挑战极巨团战的上限，不可再参加！"
+  win: "恭喜你赢得了团战，今天剩余挑战次数%remain%"
+BanPokemonJoinRaid:
+  message: "您不能携带%pokemon%参加极巨团战！"
+AntiDenPortal: "检测到您的周围有巢穴疑似被使用地狱门搬运中，这是不被允许的！"
+addBanItem: "成功将 %item% 添加到禁止列表！"

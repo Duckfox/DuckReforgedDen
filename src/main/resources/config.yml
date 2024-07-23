@@ -1,0 +1,106 @@
+prefix: "&7[&bDuckReforgedDen&7]"
+
+#巢穴捕捉提示
+CatchMessage:
+  #是否开启
+  enable: true
+  # 发送延迟
+  # 默认为0，如果你遇到球种不匹配，比如用大师球抓的但是却显示精灵球，请调大此值到合适
+  delay: 0
+#修复场外招式可以将宝可梦卡出来的Bug
+FixExplodedDen:
+  #是否开启
+  enable: true
+  #场外Mega后一定时间内无法点击巢穴(推荐大于等于10)
+  time: 10
+#禁止巢穴被传送门传送(禁止搬运巢穴)
+AntiDenPortal:
+  #是否开启
+  enable: true
+  #是否直接清除此巢穴
+  remove: true
+  #警告周围的玩家
+  warn:
+    #是否开启
+    enable: true
+    #警告范围
+    range: 5
+#禁止巢穴掉落指定物品
+BanItemsInDen:
+  #是否开启(如果不需要请关闭)
+  enable: true
+  #禁止掉落列表 写bukkit名
+  # 游戏中使用指令/drd addbanitem可将手中的物品添加到此列表中
+  list:
+    - 'PIXELMON_GOLDEN_BOTTLE_CAP'
+    - 'PIXELMON_SILVER_BOTTLE_CAP'
+#禁止巢穴刷新指定宝可梦
+BanPokemonInDen:
+  #是否开启
+  enable: true
+  banLegendary: false
+  compensatePieceAfterAnti: true
+  WaterudeWishingPiece:
+    delay: 2
+  range: 10
+  #禁止刷新列表
+  #填写宝可梦的名称，支持英文与中文，如果写英文请注意首字母大写，暂不支持形态
+  list:
+    - 'Pikachu'
+    - '小火龙'
+# 每日挑战巢穴限制
+RaidBattleLimit:
+  # 是否开启
+  enable: false
+  save: true
+  # 每种权限对应的次数
+  # 权限节点为duckreforgedden. + key
+  permissions:
+    # duckreforgedden.normal
+    normal: 20
+    # duckreforgedden.vip
+    vip: 30
+    # duckreforgedden.svip
+    svip: 40
+#禁止玩家使用指定宝可梦参加巢穴
+BanPokemonJoinRaid:
+  #是否开启
+  enable: true
+  #禁止的宝可梦名
+  list:
+    - 'Zacian'
+#胜利后执行指令
+ExecCommandAfterRaid:
+  #开关
+  enable: true
+  #配置列表
+  configs:
+    #可以设置多个配置
+    1:
+      #一个配置中可以设置多个指令方案
+      #关于权重请自行百度
+      command1:
+        #每个指令方案需要一个权重
+        weight: 10
+        world:
+          - 'world'
+        #此指令方案要执行的指令列表
+        commands:
+          - 'say 这是一条指令'
+          - 'say 这是另一条指令'
+      command2:
+        weight: 20
+        commands:
+          - 'say 这是指令'
+          - 'say 这也是指令'
+    #如果一个配置中只有一个指令方案，那么必定会执行此指令方案
+    2:
+      command1:
+        weight: 10
+        commands:
+          - 'say 这是一条一定执行的指令'
+    all:
+      command1:
+        weight: 10
+        commands:
+          - 'say 这是一条一定执行的指令'
